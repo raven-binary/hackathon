@@ -12,9 +12,13 @@ nav {
   padding-left: 10px;
 }
 
-.search_bar {
+.search_box {
   margin-left: auto;
   padding-right: 10px;
+}
+
+.search_bar {
+  display: inline-flex;
 }
 
 .tab-list {
