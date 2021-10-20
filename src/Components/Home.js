@@ -1,5 +1,4 @@
 import "../App.css";
-import SearchBar from "./Search";
 import Tabs from "./Tabs";
 import DC from "./DC";
 import Marvel from "./Marvel";
@@ -7,7 +6,8 @@ import All from "./All";
 import React, { useState, useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { StoreContext } from "../APIcall.js";
-import Chart from "./Chart";
+import Chart from "./Chart.js";
+import Search from "./Search.js";
 
 function Home() {
   const [isClicked, setClicked] = React.useState(false);
@@ -33,9 +33,7 @@ function Home() {
     <div>
       <nav>
         <div class="web_name">SuperHero Dex</div>
-        <div class="search_bar">
-          <SearchBar />
-        </div>
+        <div class="search_bar"></div>
       </nav>
       <div className="tab">
         <div>
@@ -50,6 +48,9 @@ function Home() {
             </div>
             <div label="DC">
               <DC />
+            </div>
+            <div label="Chart">
+              <Chart />
             </div>
           </Tabs>
         </div>
