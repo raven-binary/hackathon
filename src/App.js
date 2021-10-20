@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
-import React from 'react';
+import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import "./App.css";
+import React from "react";
+import Home from "./Components/Home";
+import All from "./Components/All";
+// import Chart from "./Components/Chart";
 
+function App() {
+  // const [ID, setID] = React.useState("");
+  // const [ALL, setALL] = React.useState([]);
 
-function App (){
+  // React.useEffect(() => {
+  //   const getData = (id) => {
+  //     fetch(`https://akabab.github.io/superhero-api/api/all.json`)
+  //       .then((response) => response.json())
+  //       .then((response_json) => {
+  //         setALL(response_json);
+  //       });
+  //   };
 
-  React.useEffect(() => {
+  // const mapping = ALL.map((data) => (
+  //   <li key={data.toString()} value={data} />
+  // ));
+  /*
+    {
+      ALL
+        ? ALL.map((a, index) => {
+            return <li key={index}>{a}</li>;
+          })
+        : null;
+    }*/
+  //   getData();
+  // }, []);
 
-    const getData = () => {
-      fetch("https://www.superheroapi.com/api.php/4917344464945186/69/connections")
-      .then((response) => response.json())
-      .then((response.json) => {
-        
-      });
-    }
+  // const mapping = ALL.map((data) => (
+  //   <div className="hero-Card">{data.name}</div>
+  // ));
 
+  // const mapping = ALL.map((data) => <li key={data.toString()} value={data} />);
+  // console.log(mapping);
 
-  })
-
-  /*const [ID, setID] = React.useState("");
-
+  /*const [ID, setID] = React.useState("")
   React.useEffect(() => {
 
     const getData = async () => {
@@ -36,10 +56,25 @@ function App (){
     const data = getData();
   }); */
 
-  return(
-    <div>{}</div>
-  )
-
+  return (
+    <>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+      {/* <Chart /> */}
+      {/* <Mapping /> */}
+      {/* /* <div>
+        {ALL.map((a, index) => {
+          return <div key={ALL.index}>{ALL.a}</div>;
+        })} */
+      /* {mapping} */
+      /* {console.log(a.name)} */}
+    </>
+  );
 }
 
 export default App;
