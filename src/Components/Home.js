@@ -1,5 +1,4 @@
 import "../App.css";
-import SearchBar from "./Search";
 import Tabs from "./Tabs";
 import Content from "./Content";
 import DC from "./DC";
@@ -9,6 +8,8 @@ import React, { useState, useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ReactDom from "react-dom";
 import { StoreContext } from "../APIcall.js";
+import Chart from "./Chart.js";
+import Search from "./Search.js";
 
 function Home() {
   const API = React.useContext(StoreContext);
@@ -29,9 +30,7 @@ function Home() {
     <div>
       <nav>
         <div class="web_name">SuperHero Dex</div>
-        <div class="search_bar">
-          <SearchBar />
-        </div>
+        <div class="search_bar"></div>
       </nav>
       <div className="tab">
         <div>
@@ -46,7 +45,9 @@ function Home() {
             <div label="DC">
               <DC />
             </div>
-            <div label="HUH?">{mapping}</div>
+            <div label="Chart">
+              <Chart />
+            </div>
           </Tabs>
         </div>
       </div>

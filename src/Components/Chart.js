@@ -2,8 +2,11 @@ import React from "react";
 import RadarChart from "react-svg-radar-chart";
 import { StoreContext } from "../APIcall.js";
 
-const Chart = (props) => {
-  const mapping = props.array.map((data) => (
+function Chart() {
+  const API = React.useContext(StoreContext);
+  console.log(API);
+
+  const mapping = API.map((data) => (
     <>
       {data.biography.publisher === "Marvel Comics" ||
       data.biography.publisher === "DC Comics" ? (
@@ -43,6 +46,6 @@ const Chart = (props) => {
       />
     </div>
   );
-};
+}
 
 export default Chart;
