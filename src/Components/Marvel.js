@@ -1,6 +1,7 @@
 import React from "react";
 import "../App.css";
 import { StoreContext } from "../APIcall.js";
+import Chart from "./Chart";
 
 function Marvel() {
   const API = React.useContext(StoreContext);

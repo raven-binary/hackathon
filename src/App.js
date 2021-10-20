@@ -3,6 +3,7 @@ import "./App.css";
 import React from "react";
 import Home from "./Components/Home";
 import All from "./Components/All";
+import Chart from "./Components/Chart";
 
 function App() {
   return (

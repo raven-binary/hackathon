@@ -1,25 +1,9 @@
 import React from "react";
 import "../App.css";
 import { StoreContext } from "../APIcall.js";
+import Chart from "./Chart";
 
-function All() {
-  // const handleClick = () => {
-  //   const config = {
-  //     type: "radar",
-  //     data: ALL,
-  //     options: {
-  //       responsive: true,
-  //       plugins: {
-  //         title: {
-  //           display: true,
-  //           text: "Chart.js Radar Chart",
-  //         },
-  //       },
-  //     },
-  //   };
-  //   alert(config);
-  // };
-
+function All({ setClicked, setId }) {
   const API = React.useContext(StoreContext);
   console.log(API);
 
@@ -35,9 +19,18 @@ function All() {
     </>
   ));
 
+  const onClick = () => {
+    return (
+      <div>
+        <Chart />
+      </div>
+    );
+  };
   return (
     <>
-      <div className="card-container">{mapping}</div>
+      <div onClick={onClick} className="card-container">
+        {mapping}
+      </div>
     </>
   );
 }
