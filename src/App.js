@@ -14,14 +14,6 @@ function App() {
           </Route>
         </Switch>
       </BrowserRouter>
-      {/* <Chart /> */}
-      {/* <Mapping /> */}
-      {/* /* <div>
-        {ALL.map((a, index) => {
-          return <div key={ALL.index}>{ALL.a}</div>;
-        })} */
-      /* {mapping} */
-      /* {console.log(a.name)} */}
     </>
   );
 }
