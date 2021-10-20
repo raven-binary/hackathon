@@ -1,23 +1,12 @@
 import React from "react";
 import "../App.css";
+import { StoreContext } from "../APIcall.js";
 
 function Marvel() {
-  const [ALL, setALL] = React.useState([]);
+  const API = React.useContext(StoreContext);
+  console.log(API);
 
-  React.useEffect(() => {
-    const getData = (id) => {
-      fetch(`https://akabab.github.io/superhero-api/api/all.json`)
-        .then((response) => response.json())
-        .then((response_json) => {
-          setALL(response_json);
-        });
-    };
-
-    getData();
-  }, []);
-
-  console.log(ALL);
-  const mapping = ALL.map((data) => (
+  const mapping = API.map((data) => (
     <>
       {data.biography.publisher === "Marvel Comics" ? (
         <div className="hero-card">
