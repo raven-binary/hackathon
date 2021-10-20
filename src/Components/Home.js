@@ -14,7 +14,7 @@ function Home() {
       <nav>
         <div class="web_name">SuperHero Dex</div>
         <div class="search_bar">
-          <SearchBar searchText={searchText} handlechange={handleChange} />
+          <SearchBar />
         </div>
       </nav>
       <div className="tab">
