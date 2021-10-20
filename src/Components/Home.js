@@ -11,15 +11,15 @@ function Home() {
         <div class="web_name">SuperHero Dex</div>
         <div class="nav_logo">
           <img
-            class="nav_logo2"
+            class="nav_logo1"
             src={marvellogo}
-            width="170px"
+            width="150px"
             alt="Marvel Logo"
           />
           <img class="nav_logo2" src={dclogo} width="150px" alt="DC logo" />
         </div>
       </nav>
-      <div className="tab">
+      <div className="hero_container">
         <div>
           <div class="choose_bar">
             <h1>FIND YOUR INNER HERO</h1>

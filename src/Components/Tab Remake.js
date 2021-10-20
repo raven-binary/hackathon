@@ -19,7 +19,7 @@ const Tab = styled.button`
   ${({ active }) =>
     active &&
     `
-    border-bottom: 5px solid #e54b4b;
+    border-bottom: 5px solid #EF233C;
     opacity: 1;
   `}
 `;
@@ -42,7 +42,7 @@ function TabGroup() {
       // ): null}
   const CardSection = () => {
     switch (active) {
-        case "All":   return <All/>;
+        case "All":   return <All />;
         case "Marvel": return <Marvel/>;
         case "DC":  return <DC/>;
     }}

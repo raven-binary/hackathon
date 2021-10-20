@@ -18,7 +18,7 @@ function Marvel() {
   ));
 
   return (
-    <>
+    <>  
       <div className="card-container">{mapping}</div>
     </>
   );
