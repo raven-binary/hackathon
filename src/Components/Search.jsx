@@ -1,17 +1,20 @@
 import "../App.css";
 
 const SearchBar = () => (
-  <form>
+  <div class="search_bar">
+    <form >
     <input
-      class=""
+      class="search_input"
       type="search"
       placeholder="Search"
       aria-label="Search"
     ></input>
-    <button class="" type="submit">
+    <button class="search_submit" type="submit">
       Search
     </button>
   </form>
+  </div>
+  
 );
 
 export default SearchBar;
