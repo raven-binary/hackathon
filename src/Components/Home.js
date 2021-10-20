@@ -9,15 +9,6 @@ import styled from 'styled-components';
 import marvellogo from './Marvelogo.jpg';
 import dclogo from './Dclogo.jpg';
 
-const App = (props) => {
-  window.addEventListener('click', (event) => {
-    // ...
-  });
-  return (
-    console.log(event)
-  );
-};
-
 function Home() {
   
   return (
