@@ -7,8 +7,24 @@ import Marvel from "./Marvel";
 import All from "./All";
 import React, { useState, useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import ReactDom from "react-dom";
+import { StoreContext } from "../APIcall.js";
 
 function Home() {
+  const API = React.useContext(StoreContext);
+  console.log(API);
+
+  const mapping = API.map((data) => (
+    <>
+      {data.biography.publisher === "Marvel Comics" ? (
+        <div className="hero-card">
+          <img className="hero-img" src={data.images.sm} />
+          {data.name}
+        </div>
+      ) : null}
+    </>
+  ));
+
   return (
     <div>
       <nav>
@@ -30,11 +46,11 @@ function Home() {
             <div label="DC">
               <DC />
             </div>
+            <div label="HUH?">{mapping}</div>
           </Tabs>
         </div>
       </div>
     </div>
   );
 }
-
 export default Home;

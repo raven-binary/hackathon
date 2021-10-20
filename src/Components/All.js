@@ -1,25 +1,29 @@
 import React from "react";
 import "../App.css";
+import { StoreContext } from "../APIcall.js";
 
-function All() {
-  const [ID, setID] = React.useState("");
-  const [ALL, setALL] = React.useState([]);
+function All(props) {
+  // const handleClick = () => {
+  //   const config = {
+  //     type: "radar",
+  //     data: ALL,
+  //     options: {
+  //       responsive: true,
+  //       plugins: {
+  //         title: {
+  //           display: true,
+  //           text: "Chart.js Radar Chart",
+  //         },
+  //       },
+  //     },
+  //   };
+  //   alert(config);
+  // };
 
-  React.useEffect(() => {
-    const getData = (id) => {
-      fetch(`https://akabab.github.io/superhero-api/api/all.json`)
-        .then((response) => response.json())
-        .then((response_json) => {
-          setALL(response_json);
-        });
-    };
+  const API = React.useContext(StoreContext);
+  console.log(API);
 
-    getData();
-  }, []);
-
-  console.log(ALL);
-
-  const mapping = ALL.map((data) => (
+  const mapping = API.map((data) => (
     <>
       {data.biography.publisher === "Marvel Comics" ||
       data.biography.publisher === "DC Comics" ? (
@@ -30,26 +34,6 @@ function All() {
       ) : null}
     </>
   ));
-
-  // const mapping = ALL.map((data) => <li key={data.toString()} value={data} />);
-  // console.log(mapping);
-
-  /*const [ID, setID] = React.useState("")
-  React.useEffect(() => {
-
-    const getData = async () => {
-
-      // Below is to call API
-      const res =  await fetch("https://www.superheroapi.com/api.php/4917344464945186/69/connections")
-      const test_data = await res.json()
-
-    // below is to specify which data from JSON you would like to call, such as, name, id.
-    console.log(test_data)
-    }
-
-    setID(test_data.id);
-    const data = getData();
-  }); */
 
   return (
     <>
