@@ -1,5 +1,4 @@
 import "../App.css";
-import SearchBar from "./Search";
 import Tabs from "./Tabs";
 import Content from "./Content";
 import DC from "./DC";
@@ -7,15 +6,31 @@ import Marvel from "./Marvel";
 import All from "./All";
 import React, { useState, useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import ReactDom from "react-dom";
+import { StoreContext } from "../APIcall.js";
+import Chart from "./Chart.js";
+import Search from "./Search.js";
 
 function Home() {
+  const API = React.useContext(StoreContext);
+  console.log(API);
+
+  const mapping = API.map((data) => (
+    <>
+      {data.biography.publisher === "Marvel Comics" ? (
+        <div className="hero-card">
+          <img className="hero-img" src={data.images.sm} />
+          {data.name}
+        </div>
+      ) : null}
+    </>
+  ));
+
   return (
     <div>
       <nav>
         <div class="web_name">SuperHero Dex</div>
-        <div class="search_bar">
-          <SearchBar />
-        </div>
+        <div class="search_bar"></div>
       </nav>
       <div className="tab">
         <div>
@@ -30,11 +45,13 @@ function Home() {
             <div label="DC">
               <DC />
             </div>
+            <div label="Chart">
+              <Chart />
+            </div>
           </Tabs>
         </div>
       </div>
     </div>
   );
 }
-
 export default Home;
