@@ -2,7 +2,7 @@ import React from "react";
 import "../App.css";
 import { StoreContext } from "../APIcall.js";
 
-function All(props) {
+function All() {
   // const handleClick = () => {
   //   const config = {
   //     type: "radar",
