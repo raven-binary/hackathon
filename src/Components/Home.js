@@ -1,54 +1,30 @@
 import "../App.css";
-import Tabs from "./Tabs";
-import Content from "./Content";
-import DC from "./DC";
-import Marvel from "./Marvel";
-import All from "./All";
+import TabGroup from "./Tab Remake";
 import React, { useState, useEffect, useRef } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import ReactDom from "react-dom";
-import { StoreContext } from "../APIcall.js";
-import Chart from "./Chart.js";
-import Search from "./Search.js";
+import marvellogo from "./Marvelogo.jpg";
+import dclogo from "./Dclogo.jpg";
 
 function Home() {
-  const API = React.useContext(StoreContext);
-  console.log(API);
-
-  const mapping = API.map((data) => (
-    <>
-      {data.biography.publisher === "Marvel Comics" ? (
-        <div className="hero-card">
-          <img className="hero-img" src={data.images.sm} />
-          {data.name}
-        </div>
-      ) : null}
-    </>
-  ));
-
   return (
     <div>
       <nav>
         <div class="web_name">SuperHero Dex</div>
-        <div class="search_bar"></div>
+        <div class="nav_logo">
+          <img
+            class="nav_logo2"
+            src={marvellogo}
+            width="170px"
+            alt="Marvel Logo"
+          />
+          <img class="nav_logo2" src={dclogo} width="150px" alt="DC logo" />
+        </div>
       </nav>
       <div className="tab">
         <div>
-          <h1> Choose Your Hero</h1>
-          <Tabs>
-            <div label="All">
-              <All />
-            </div>
-            <div label="Marvel">
-              <Marvel />
-            </div>
-            <div label="DC">
-              <DC />
-            </div>
-            <div label="Chart">
-              <Chart />
-            </div>
-          </Tabs>
+          <div class="choose_bar">
+            <h1>FIND YOUR INNER HERO</h1>
+          </div>
+          <TabGroup />
         </div>
       </div>
     </div>
