@@ -2,6 +2,9 @@ import "../App.css";
 import SearchBar from "./Search";
 import Tabs from "./Tabs";
 import Content from "./Content";
+import DC from "./DC";
+import Marvel from "./Marvel";
+import All from "./All";
 import React, { useState, useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -11,7 +14,7 @@ function Home() {
       <nav>
         <div class="web_name">SuperHero Dex</div>
         <div class="search_bar">
-          <SearchBar />
+          <SearchBar searchText={searchText} handlechange={handleChange} />
         </div>
       </nav>
       <div className="tab">
@@ -19,13 +22,13 @@ function Home() {
           <h1> Choose Your Hero</h1>
           <Tabs>
             <div label="All">
-              <Content />
+              <All />
             </div>
             <div label="Marvel">
-              <Content />
+              <Marvel />
             </div>
             <div label="DC">
-              <Content />
+              <DC />
             </div>
           </Tabs>
         </div>

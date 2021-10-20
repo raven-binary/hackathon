@@ -1,7 +1,8 @@
 import React from "react";
+import "../App.css";
 
 function Marvel() {
-  const text1 = "Marvel Comics";
+  const [ALL, setALL] = React.useState([]);
 
   React.useEffect(() => {
     const getData = (id) => {
@@ -16,23 +17,20 @@ function Marvel() {
   }, []);
 
   console.log(ALL);
-
   const mapping = ALL.map((data) => (
-    <div>
-      {data.biography.publisher === text1 ? (
+    <>
+      {data.biography.publisher === "Marvel Comics" ? (
         <div className="hero-card">
           <img className="hero-img" src={data.images.sm} />
           {data.name}
         </div>
-      ) : (
-        <></>
-      )}
-    </div>
+      ) : null}
+    </>
   ));
 
   return (
     <>
-      <div className="card-container">{Marvel}</div>
+      <div className="card-container">{mapping}</div>
     </>
   );
 }

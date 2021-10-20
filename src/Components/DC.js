@@ -1,9 +1,7 @@
 import React from "react";
 
 function DC() {
-  //   const [ID, setID] = React.usState("");
   const [ALL, setALL] = React.useState([]);
-  const text1 = "DC Comics";
 
   React.useEffect(() => {
     const getData = () => {
@@ -20,32 +18,15 @@ function DC() {
   console.log(ALL);
 
   const mapping = ALL.map((data) => (
-    <div>
-      {data.biography.publisher === text1 ? (
+    <>
+      {data.biography.publisher === "DC Comics" ? (
         <div className="hero-card">
           <img className="hero-img" src={data.images.sm} />
           {data.name}
         </div>
-      ) : (
-        <></>
-      )}
-    </div>
+      ) : null}
+    </>
   ));
-
-  // const mapping = ALL.map((data) => (
-  //   <div>
-  //     {/* text 1=marvel comics, text 2 = dc comics */}
-  //     {data.biography.publisher === text1 ||
-  //     data.biography.publisher === text2 ? (
-  //       <div className="hero-card">
-  //         <img className="hero-img" src={data.images.sm} />
-  //         {data.name}
-  //       </div>
-  //     ) : (
-  //       <></>
-  //     )}
-  //   </div>
-  // ));
 
   // const mapping = ALL.map((data) => <li key={data.toString()} value={data} />);
   // console.log(mapping);
@@ -69,7 +50,7 @@ function DC() {
 
   return (
     <>
-      <div className="card-container">{DC}</div>
+      <div className="card-container">{mapping}</div>
     </>
   );
 }
