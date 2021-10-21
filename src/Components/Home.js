@@ -1,8 +1,10 @@
 import "../App.css";
-import TabGroup from "./Tab Remake";
+import TabGroup from "./TabGroup";
 import React, { useState, useEffect, useRef } from "react";
-import marvellogo from "./Marvelogo.jpg";
-import dclogo from "./Dclogo.jpg";
+import marvellogo from "./Marvelogo2.jpg";
+import dclogo from "./Dclogo2.jpg";
+import spiderbat from "./dcvsmarvel.jpg";
+// import ScrollButton from "./ScrollTop";
 
 function Home() {
   return (
@@ -21,10 +23,14 @@ function Home() {
       </nav>
       <div className="hero_container">
         <div>
-          <div class="choose_bar">
+          <div
+            class="choose_bar"
+            style={{ backgroundImage: `url(${spiderbat})` }}
+          >
             <h1>FIND YOUR INNER HERO</h1>
           </div>
           <TabGroup />
+          {/* <ScrollButton /> */}
         </div>
       </div>
     </div>
