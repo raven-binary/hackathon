@@ -4,21 +4,45 @@ import { StoreContext } from "../APIcall.js";
 
 function Search() {
   const API = React.useContext(StoreContext);
-  console.log(API);
+  const [search, setSearch] = React.useState("");
+  const [searchResult, setSearchResult] = React.useState([]);
 
-  const Timage = API[4].images.sm;
-  const Tname = API[4].name;
+  const searchNow = () => {
+    const filtered = API.filter((i) =>
+      i.name.toLowerCase().includes(search.toLocaleLowerCase())
+    );
 
-  const Tmap = (
-    <div className="hero-card">
-      <img className="hero-img" src={Timage} />
-      {Tname}
-    </div>
-  );
+    setSearchResult(filtered);
+  };
 
   return (
     <>
-      <div className="card-container">{Tmap}</div>
+      <div className="search_bar">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
+          <input
+            className="search_input"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </form>
+        <button className="search_submit" onClick={searchNow}>
+          Search Now
+        </button>
+      </div>
+      <div className="card-container search-center">
+        {searchResult.map((data) => {
+          return (
+            <div className="hero-card ">
+              <img className="hero-img" src={data.images.sm} />
+              {data.name}
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 }

@@ -1,27 +1,12 @@
 import React from "react";
 import RadarChart from "react-svg-radar-chart";
 import { StoreContext } from "../APIcall.js";
+import "../App.css";
 
-function Chart() {
-  const API = React.useContext(StoreContext);
-  console.log(API);
+const Chart = ({ hero }) => {
+  // const API = React.useContext(StoreContext);
+  console.log(hero);
 
-  const mapping = API.map((data) => (
-    <>
-      {data.biography.publisher === "Marvel Comics" ||
-      data.biography.publisher === "DC Comics" ? (
-        <div className="hero-card">
-          <ul>
-            <li>{data.powerstats.power}</li>
-            <li>{data.powerstats.strength}</li>
-            <li>{data.powerstats.intelligence}</li>
-            <li>{data.powerstats.speed}</li>
-            <li>{data.powerstats.durability}</li>
-          </ul>
-        </div>
-      ) : null}
-    </>
-  ));
   return (
     <div>
       <RadarChart
@@ -37,15 +22,36 @@ function Chart() {
           // data
           {
             data: {
-              mapping,
+              // columns
+              Power: hero.powerstats.power / 100,
+              Strength: hero.powerstats.strength / 100,
+              Intelligence: hero.powerstats.intelligence / 100,
+              Speed: hero.powerstats.speed / 100,
+              Durability: hero.powerstats.durability / 100,
             },
             meta: { color: "#58FCEC" },
           },
         ]}
-        size={400}
+        size={500}
       />
+      <ul>
+        <li>Name : {hero.name}</li>
+        <li>Publisher : {hero.biography.publisher}</li>
+        <li>
+          Overall score :{" "}
+          {Math.round(
+            (hero.powerstats.power +
+              hero.powerstats.strength +
+              hero.powerstats.intelligence +
+              hero.powerstats.speed +
+              hero.powerstats.durability) /
+              6
+          ) +
+            (Number.EPSILON * 100) / 100}
+        </li>
+      </ul>
     </div>
   );
-}
+};
 
 export default Chart;
