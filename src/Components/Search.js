@@ -28,10 +28,11 @@ function Search() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
+
+          <button type="submit" className="search_submit" onClick={searchNow}>
+            Search Now
+          </button>
         </form>
-        <button className="search_submit" onClick={searchNow}>
-          Search Now
-        </button>
       </div>
       <div className="card-container search-center">
         {searchResult.map((data) => {
