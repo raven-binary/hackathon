@@ -36,7 +36,16 @@ function DC() {
 
   return (
     <>
-      <div className="card-container">{mapping}</div>
+      <div
+        className="card-container"
+        style={{
+          backgroundImage: `url(${process.env.PUBLIC_URL + "/giphy.gif"})`,
+          // backgroundRepeat: "no-repeat",
+          // backgroundSize: "100%",
+        }}
+      >
+        {mapping}
+      </div>
       <Card trigger={buttonPopUp} setTrigger={setButtonPopUp}>
         {hero && <Chart ID={ID} hero={hero} />}
       </Card>

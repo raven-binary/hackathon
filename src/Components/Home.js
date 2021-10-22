@@ -38,7 +38,16 @@ function Home() {
           >
             <h1>FIND YOUR INNER HERO</h1>
           </div>
-          <TabGroup />
+          <div
+            style={{
+              backgroundImage: `url(${process.env.PUBLIC_URL + "/giphy.gif"})`,
+              height: "100vh",
+              // backgroundRepeat: "no-repeat",
+              // backgroundSize: "100%",
+            }}
+          >
+            <TabGroup />
+          </div>
           {/* <ScrollButton /> */}
         </div>
       </div>

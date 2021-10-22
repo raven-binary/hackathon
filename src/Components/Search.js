@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../App.css";
 import { StoreContext } from "../APIcall.js";
+import Card from "./Card";
+import Chart from "./Chart";
 
 function Search() {
   const API = React.useContext(StoreContext);
   const [search, setSearch] = React.useState("");
   const [searchResult, setSearchResult] = React.useState([]);
+  const [ID, setID] = React.useState("");
+  const [buttonPopUp, setButtonPopUp] = useState(false);
+  const [hero, setHero] = useState(null);
 
   const searchNow = () => {
     const filtered = API.filter((i) =>
@@ -38,12 +43,22 @@ function Search() {
       <div className="card-container search-center">
         {searchResult.map((data) => {
           return (
-            <div className="hero-card ">
+            <div
+              onClick={() => {
+                setButtonPopUp(true);
+                setID(data.id);
+                setHero(API.find((el) => el.id === data.id));
+              }}
+              className="hero-card "
+            >
               <img className="hero-img" src={data.images.sm} />
               {data.name}
             </div>
           );
         })}
+        <Card trigger={buttonPopUp} setTrigger={setButtonPopUp}>
+          {hero && <Chart ID={ID} hero={hero} />}
+        </Card>
       </div>
     </>
   );

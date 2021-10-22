@@ -7,6 +7,8 @@ import "./Chart.css";
 const Chart = ({ hero }) => {
   // const API = React.useContext(StoreContext);
   console.log(hero);
+  // const screensize = useRef("")
+  console.log(window.innerWidth / 5);
 
   return (
     <>
@@ -15,7 +17,11 @@ const Chart = ({ hero }) => {
 
         <img className="pop-hero-img" src={hero.images.sm} />
       </div>
-      <div className="popup-hero-chart">
+      <div
+        className="popup-hero-chart"
+        options={{ maintainAspectRatio: false }}
+        width={"30%"}
+      >
         <RadarChart
           captions={{
             // columns
@@ -39,7 +45,7 @@ const Chart = ({ hero }) => {
               meta: { color: "#ef233c" },
             },
           ]}
-          size={450}
+          size={window.innerWidth / 3.3} // whatSize();
         />
 
         {/* <p>Power (POW) : {hero.powerstats.power }</p>
