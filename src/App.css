@@ -59,7 +59,7 @@ nav {
   font-family: "Bangers";
   letter-spacing: 3px;
   color: #f7ebe8;
-  font-size: 2.7em;
+  font-size: 3em;
   transition: ease all 1s;
 }
 
@@ -241,12 +241,12 @@ nav {
 }
 
 .popup-hero-details {
-  max-width: 500px;
+  max-width: 400px;
   font-family: "Montserrat", cursive;
   font-weight: bolder;
   color: rgb(0, 0, 0);
   padding-top: 20px;
-  font-size: x-large;
+  font-size: 18px;
   transition: ease all 0.5s;
 }
 
@@ -448,6 +448,10 @@ nav {
   .nav_logo2 {
     width: 60px;
   }
+  .popup-inner {
+    height: 650px;
+    width: 280px;
+  }
   nav {
     height: 50px;
   }
@@ -458,9 +462,10 @@ nav {
     font-size: 28px;
   }
   .popup-inner {
-    height: 280px;
+    height: 420px;
     width: 280px;
   }
+
   .pop-hero-img {
     width: 8rem;
   }

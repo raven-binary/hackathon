@@ -34,15 +34,7 @@ const ButtonGroup = styled.div`
 
 function TabGroup() {
   const tabs = ["All", "Marvel", "DC", "Search"];
-  //   {active === "All" ?(
-  //     <div><All/></div>
-  // ): null}
-  // {active === "Marvel" ?(
-  //     <div><Marvel/></div>
-  // ): null}
-  // {active === "DC" ?(
-  //     <div><DC/></div>
-  // ): null}
+
   const CardSection = () => {
     switch (active) {
       case "All":
@@ -53,6 +45,7 @@ function TabGroup() {
         return <DC />;
       case "Search":
         return <Search />;
+      default:
     }
   };
 

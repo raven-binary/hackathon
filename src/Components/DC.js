@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../App.css";
 import { StoreContext } from "../APIcall.js";
 import Card from "./Card";
-import CardFlip from "./Flip";
 import Chart from "./Chart";
 
 function DC() {
@@ -27,7 +26,7 @@ function DC() {
           }}
           className="hero-card"
         >
-          <img className="hero-img" src={data.images.sm} />
+          <img className="hero-img" src={data.images.sm} alt="" />
           {data.name}
         </div>
       ) : null}

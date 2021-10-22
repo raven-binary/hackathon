@@ -1,10 +1,6 @@
 import "../App.css";
 import TabGroup from "./TabGroup";
-import React, { useState, useEffect, useRef } from "react";
-// import marvellogo from "/Marvelogo2.jpg";
-// import dclogo from "/Dclogo2.jpg";
-// import spiderbat from "/dcvsmarvel.jpg";
-// import ScrollButton from "./ScrollTop";
+import React from "react";
 
 function Home() {
   return (
@@ -42,13 +38,10 @@ function Home() {
             style={{
               backgroundImage: `url(${process.env.PUBLIC_URL + "/giphy.gif"})`,
               height: "100vh",
-              // backgroundRepeat: "no-repeat",
-              // backgroundSize: "100%",
             }}
           >
             <TabGroup />
           </div>
-          {/* <ScrollButton /> */}
         </div>
       </div>
     </div>

@@ -2,7 +2,6 @@ import React from "react";
 export const StoreContext = React.createContext(null);
 
 export default function APIcall({ children }) {
-  //export const StoreContext = React.createContext(null);
   const [ALL, setALL] = React.useState([]);
 
   React.useEffect(() => {

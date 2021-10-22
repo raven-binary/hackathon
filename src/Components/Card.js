@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import ReactCardFlip from "react-card-flip";
+import React from "react";
 import "../App.css";
 
 function Card(props) {

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../App.css";
 import { StoreContext } from "../APIcall.js";
 import Card from "./Card";
-import CardFlip from "./Flip";
 import Chart from "./Chart";
 
 function Marvel() {
@@ -27,7 +26,7 @@ function Marvel() {
           }}
           className="hero-card"
         >
-          <img className="hero-img" src={data.images.sm} />
+          <img className="hero-img" src={data.images.sm} alt="" />
           {data.name}
         </div>
       ) : null}
@@ -40,8 +39,6 @@ function Marvel() {
         className="card-container"
         style={{
           backgroundImage: `url(${process.env.PUBLIC_URL + "/giphy.gif"})`,
-          // backgroundRepeat: "no-repeat",
-          // backgroundSize: "100%",
         }}
       >
         {mapping}

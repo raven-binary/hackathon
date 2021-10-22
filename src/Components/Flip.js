@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 import "../App.css";
-import Chart from "./Chart";
 
 const CardFlip = () => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -18,7 +17,6 @@ const CardFlip = () => {
 
   const autoResize = (width) => {
     let size = 0;
-    //console.log("Desktop: " + isDesktopSize);
     console.log(window.innerWidth);
     if (window.innerWidth > 810) {
       size = 450;
@@ -39,8 +37,6 @@ const CardFlip = () => {
       </div>
 
       <div class="chart">
-        {/* hello */}
-        {/* <Chart /> */}
         <button onClick={handleClick}>Flip It</button>
       </div>
     </ReactCardFlip>
