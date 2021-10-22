@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Teko&display=swap");
+
+.shape {
+  fill-opacity: 0.8;
+}
+
+.shape:hover {
+  fill-opacity: 1;
+  z-index: 100;
+}
+
+.scale {
+  fill: #000000;
+  stroke: rgb(255, 255, 255);
+  stroke-width: 0.8;
+}
+
+.axis {
+  stroke: rgb(255, 0, 0);
+  stroke-width: 0.8;
+}
+
+.caption {
+  fill: rgb(0, 0, 0);
+  font-size: 20px;
+  font-family: "Bangers";
+}
+
+/* .holder{
+    transform: scale(8.5);
+
+} */
+
+/* 1080p: size={450} */
+/* 800p : size={300}*/
+/*641p : size={280}*/
+/*570p : size={200}*/

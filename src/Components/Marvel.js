@@ -16,7 +16,7 @@ function Marvel() {
   const mapping = API.map((data) => (
     <>
       {data.biography.publisher === "Marvel Comics" ? (
-        <button
+        <div
           id={data.id}
           onClick={() => {
             setButtonPopUp(true);
@@ -29,7 +29,7 @@ function Marvel() {
         >
           <img className="hero-img" src={data.images.sm} />
           {data.name}
-        </button>
+        </div>
       ) : null}
     </>
   ));

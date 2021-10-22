@@ -25,12 +25,13 @@ function Search() {
         >
           <input
             className="search_input"
+            placeholder="Hero Name"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
 
           <button type="submit" className="search_submit" onClick={searchNow}>
-            Search Now
+            Search
           </button>
         </form>
       </div>

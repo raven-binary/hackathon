@@ -11,7 +11,7 @@ function Home() {
     <div>
       <nav>
         <div class="web_name">SuperHero Dex</div>
-        <div class="nav_logo">
+        <div class="nav_logo_container">
           <img
             class="nav_logo1"
             src={process.env.PUBLIC_URL + "/Marvelogo2.jpg"}

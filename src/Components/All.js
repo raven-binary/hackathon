@@ -38,7 +38,7 @@ function All() {
       <>
         {data.biography.publisher === "Marvel Comics" ||
         data.biography.publisher === "DC Comics" ? (
-          <button
+          <div
             id={data.id}
             onClick={() => {
               setButtonPopUp(true);
@@ -51,7 +51,7 @@ function All() {
           >
             <img className="hero-img" src={data.images.sm} />
             {data.name}
-          </button>
+          </div>
         ) : null}
       </>
     </>
