@@ -2,26 +2,9 @@ import React, { useState } from "react";
 import "../App.css";
 import { StoreContext } from "../APIcall.js";
 import Card from "./Card";
-import CardFlip from "./Flip";
 import Chart from "./Chart";
 
 function All() {
-  // const handleClick = () => {
-  //   const config = {
-  //     type: "radar",
-  //     data: ALL,
-  //     options: {
-  //       responsive: true,
-  //       plugins: {
-  //         title: {
-  //           display: true,
-  //           text: "Chart.js Radar Chart",
-  //         },
-  //       },
-  //     },
-  //   };
-  //   alert(config);
-  // };
   const [ID, setID] = React.useState("");
   const [buttonPopUp, setButtonPopUp] = useState(false);
   const [hero, setHero] = useState(null);
@@ -49,7 +32,7 @@ function All() {
             }}
             className="hero-card"
           >
-            <img className="hero-img" src={data.images.sm} />
+            <img className="hero-img" src={data.images.sm} alt="" />
             {data.name}
           </div>
         ) : null}
@@ -63,8 +46,6 @@ function All() {
         className="card-container"
         style={{
           backgroundImage: `url(${process.env.PUBLIC_URL + "/giphy.gif"})`,
-          // backgroundRepeat: "no-repeat",
-          // backgroundSize: "100%",
         }}
       >
         {mapping}

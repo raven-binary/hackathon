@@ -1,27 +1,17 @@
 import React from "react";
 import RadarChart from "react-svg-radar-chart";
-import { StoreContext } from "../APIcall.js";
 import "../App.css";
 import "./Chart.css";
 
 const Chart = ({ hero }) => {
-  // const API = React.useContext(StoreContext);
-  console.log(hero);
-  // const screensize = useRef("")
-  console.log(window.innerWidth / 5);
-
   return (
     <>
       <div className="popup-hero-img">
         {hero.name}
 
-        <img className="pop-hero-img" src={hero.images.sm} />
+        <img className="pop-hero-img" src={hero.images.sm} alt="" />
       </div>
-      <div
-        className="popup-hero-chart"
-        options={{ maintainAspectRatio: false }}
-        width={"30%"}
-      >
+      <div className="popup-hero-chart">
         <RadarChart
           captions={{
             // columns
@@ -45,32 +35,13 @@ const Chart = ({ hero }) => {
               meta: { color: "#ef233c" },
             },
           ]}
-          size={window.innerWidth / 3.3} // whatSize();
+          size={window.innerWidth / 3.7} // whatSize();
         />
-
-        {/* <p>Power (POW) : {hero.powerstats.power }</p>
-        <p>Strength (STR) : {hero.powerstats.strength }</p>
-        <p>Intelligence (INT) : {hero.powerstats.intelligence }</p>
-        <p>Speed SPD) : {hero.powerstats.speed }</p>
-        <p>Durability (DUR) : {hero.powerstats.durability }</p>
-          Overall score :{" "}
-          {Math.round(
-            (hero.powerstats.power +
-              hero.powerstats.strength +
-              hero.powerstats.intelligence +
-              hero.powerstats.speed +
-              hero.powerstats.durability) /
-              6
-          ) +
-            (Number.EPSILON * 100) / 100}  */}
-
         <div className="popup-hero-details">
           <p>Publisher : {hero.biography.publisher}</p>
           <p>Full Name : {hero.biography.fullName}</p>
-          {/* <p>Aliases : {hero.biography.aliases}</p> */}
           <p>First Appearance : {hero.biography.firstAppearance}</p>
           <p>Place Of Birth : {hero.biography.placeOfBirth}</p>
-          {/* <p>Relatives : {hero.connections.relatives}</p> */}
           <p>Group Affiliation : {hero.connections.groupAffiliation}</p>
         </div>
       </div>

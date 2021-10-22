@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../App.css";
 import { StoreContext } from "../APIcall.js";
 import Card from "./Card";
@@ -51,7 +51,7 @@ function Search() {
               }}
               className="hero-card "
             >
-              <img className="hero-img" src={data.images.sm} />
+              <img className="hero-img" src={data.images.sm} alt="" />
               {data.name}
             </div>
           );
