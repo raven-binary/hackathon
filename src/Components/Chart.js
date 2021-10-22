@@ -39,7 +39,7 @@ const Chart = ({ hero }) => {
               meta: { color: "#ef233c" },
             },
           ]}
-          size={dynamic data}
+          size={450}
         />
 
         {/* <p>Power (POW) : {hero.powerstats.power }</p>
