@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Bangers&family=Teko&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 body {
   font-family: "Teko", sans-serif;
   background-color: #1e1e24;
@@ -7,6 +8,7 @@ body {
 
 .hero_container {
   background-color: #1e1e24;
+  transition: ease all 1s;
 }
 
 .hero_container h1 {
@@ -14,9 +16,10 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 20px 0 20px 0;
+  padding: 40px 0 30px 0;
   border-radius: 10px;
   text-shadow: 2px 2px 4px #000000;
+  transition: ease all 1s;
 }
 
 nav {
@@ -26,15 +29,22 @@ nav {
   align-items: center;
   width: 100%;
   height: 100px;
+  transition: ease all 1s;
 }
 
-.nav_logo {
+.nav_logo_container {
   margin-left: auto;
+  transition: ease all 1s;
+}
+
+.nav_logo1 {
+  transition: ease all 1s;
 }
 
 .nav_logo2 {
   padding-left: 20px;
   padding-right: 20px;
+  transition: ease all 1s;
 }
 
 .choose_bar {
@@ -42,6 +52,7 @@ nav {
   border-radius: 0 0 10px 10px;
   background-repeat: no-repeat;
   background-size: 100%;
+  transition: ease all 1s;
 }
 
 .choose_bar h1 {
@@ -49,6 +60,7 @@ nav {
   letter-spacing: 3px;
   color: #f7ebe8;
   font-size: 2.7em;
+  transition: ease all 1s;
 }
 
 .web_name {
@@ -58,12 +70,14 @@ nav {
   letter-spacing: 3px;
   color: #edf2f4;
   text-shadow: -5px -5px 1px #ef233c;
+  transition: ease all 1s;
 }
 
 .search-container {
   background-color: #000000;
   display: flex;
   justify-content: center;
+  transition: ease all 1s;
 }
 
 .search-card-container {
@@ -74,6 +88,7 @@ nav {
   gap: 15px;
   flex-wrap: wrap;
   grid-template-columns: repeat(auto-fill, 200px);
+  transition: ease all 1s;
 }
 
 .card-container {
@@ -84,7 +99,7 @@ nav {
   gap: 15px;
   flex-wrap: wrap;
   grid-template-columns: repeat(auto-fill, 200px);
-  transition: ease all 1.5s;
+  transition: ease all 1s;
 }
 
 .search-center {
@@ -98,17 +113,17 @@ nav {
   background-color: rgb(0, 0, 0);
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  transition: 0.3s;
-  transition-timing-function: ease-out;
+  transition: ease all 0.6s;
   font-family: "Teko", sans-serif;
   font-size: 25px;
-  width: 200px;
+  cursor: pointer;
 }
 
 .hero-img {
   width: 100%;
   /* height: auto; */
   border-radius: 10px;
+  transition: ease all 1s;
 }
 
 .hero-card:hover {
@@ -132,6 +147,7 @@ nav {
   border-radius: 0.6rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   color: #000000;
+  padding-left: 10px;
 }
 
 .search_submit {
@@ -144,6 +160,7 @@ nav {
   border-radius: 0.6rem;
   background-color: #f7ebe8;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: ease all 1s;
 }
 
 .search_submit:hover {
@@ -166,27 +183,329 @@ nav {
   width: 100%;
   height: 100vh;
   /* background-color: #000000;
-  opacity: 0.2; */
+    opacity: 0.2; */
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: ease all 1s;
 }
 
 .popup-inner {
   position: relative;
-  padding: 32px;
-  width: 100%;
-  max-width: 640px;
-  background-color: #f7ebe8;
+  transition: ease 1s;
+  height: auto;
+  width: auto;
+  padding: 20px;
+  /* max-width:1040px; */
+  background-color: #e0d2d2;
+  border-radius: 20px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas: "heroimg chart" "heroimg chart";
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  transition: ease all 1s;
+}
+
+.pop-hero-img {
+  display: flex;
+  border-radius: 10px;
+  width: 25rem;
+  height: auto;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: ease all 1s;
+}
+
+.popup-hero-img {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  grid-area: heroimg;
+  font-size: 60px;
+  padding-bottom: 60px;
+  font-family: "Bangers", cursive;
+  text-shadow: 3px 5px 2px #47474796;
+  transition: ease all 1s;
+}
+
+.popup-hero-chart {
+  grid-area: chart;
+  padding-left: 20px;
+  color: rgb(0, 0, 0);
+  transition: ease all 1s;
+}
+
+.popup-hero-chart p {
+  margin-top: -10px;
+  transition: ease all 0.5s;
+}
+
+.popup-hero-details {
+  max-width: 500px;
+  font-family: "Montserrat", cursive;
+  font-weight: bolder;
+  color: rgb(0, 0, 0);
+  padding-top: 20px;
+  font-size: x-large;
+  transition: ease all 0.5s;
 }
 
 .popup-inner .close-btn {
   position: absolute;
   top: 16px;
   right: 16px;
+  cursor: pointer;
+  background-color: #f7ebe8;
+  border-radius: 30px;
+}
+
+.popup-inner .close-btn:hover {
+  color: #47474796;
+  background-color: #ef233c;
 }
 
 /* .chart {
-  height: 80%;
-  width: 100%;
-} */
+    height: 80%;
+    width: 100%;
+  } */
+
+@media only screen and (max-width: 1150px) {
+  .popup-inner {
+    height: 750px;
+    width: 700px;
+  }
+  .pop-hero-img {
+    width: 19rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .nav_logo1 {
+    width: 100px;
+  }
+  .nav_logo2 {
+    width: 100px;
+  }
+  .web_name {
+    font-size: 4em;
+    padding-left: 30px;
+  }
+  .popup-inner {
+    height: 700px;
+    width: 700px;
+  }
+  .pop-hero-img {
+    width: 19rem;
+  }
+}
+
+@media only screen and (max-width: 810px) {
+  .popup-inner {
+    height: 600px;
+    width: 600px;
+  }
+  .pop-hero-img {
+    width: 17rem;
+  }
+  .popup-hero-img {
+    font-size: 50px;
+  }
+  .popup-hero-details {
+    font-size: 22px;
+  }
+  .popup-hero-details p {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .hero-card:hover {
+    transform: scale(1.1);
+  }
+}
+
+@media only screen and (max-width: 641px) {
+  .popup-inner {
+    height: 600px;
+    width: 500px;
+  }
+  .pop-hero-img {
+    width: 14rem;
+  }
+  .hero-card {
+    font-size: 25px;
+    cursor: pointer;
+  }
+  .card-container {
+    grid-template-columns: repeat(auto-fill, 180px);
+  }
+  .hero-card:hover {
+    transform: scale(1.1);
+  }
+  .nav_logo1 {
+    width: 90px;
+  }
+  .nav_logo2 {
+    width: 90px;
+  }
+  .web_name {
+    font-size: 3em;
+    padding-left: 10px;
+  }
+  nav {
+    height: 80px;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fill, 150px);
+  }
+  .popup-inner {
+    height: 420px;
+    width: 420px;
+  }
+  .pop-hero-img {
+    width: 10rem;
+  }
+  .popup-hero-details {
+    font-size: 15px;
+  }
+  .popup-hero-img {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 525px) {
+  .hero_container h1 {
+    padding: 10px 0 10px 0;
+  }
+  .card-container {
+    grid-template-columns: repeat(auto-fill, 100px);
+  }
+  .web_name {
+    font-size: 2em;
+    padding-left: 10px;
+  }
+  .nav_logo1 {
+    width: 80px;
+  }
+  .nav_logo2 {
+    width: 80px;
+  }
+  nav {
+    height: 60px;
+  }
+  .search_input {
+    font-size: 20px;
+  }
+  .search_submit {
+    font-size: 20px;
+    width: 100px;
+  }
+}
+
+@media only screen and (max-width: 453px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fill, 90px);
+  }
+  .popup-inner {
+    height: 420px;
+    width: 380px;
+  }
+  .pop-hero-img {
+    width: 10rem;
+  }
+  .popup-hero-details {
+    font-size: 15px;
+  }
+  .popup-hero-img {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 428px) {
+  .popup-inner {
+    height: 420px;
+    width: 320px;
+  }
+  .pop-hero-img {
+    width: 8rem;
+  }
+  .popup-hero-img {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .web_name {
+    font-size: 1.6em;
+    padding-left: 5px;
+  }
+  .nav_logo1 {
+    width: 60px;
+  }
+  .nav_logo2 {
+    width: 60px;
+  }
+  nav {
+    height: 50px;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .choose_bar h1 {
+    font-size: 28px;
+  }
+  .popup-inner {
+    height: 280px;
+    width: 280px;
+  }
+  .pop-hero-img {
+    width: 8rem;
+  }
+  .popup-hero-img {
+    font-size: 30px;
+  }
+  .popup-hero-details {
+    font-size: 12px;
+  }
+  .search_input {
+    font-size: 20px;
+  }
+  .search_submit {
+    font-size: 20px;
+    width: 80px;
+  }
+}
+
+@media only screen and (max-width: 337px) {
+  .web_name {
+    font-size: 1.2em;
+    padding-left: 10px;
+  }
+  .nav_logo1 {
+    width: 40px;
+  }
+  .nav_logo2 {
+    width: 40px;
+  }
+  nav {
+    height: 50px;
+  }
+  .hero_container h1 {
+    padding: 0;
+  }
+  .card-container {
+    grid-template-columns: repeat(auto-fill, 90px);
+  }
+  .hero-card {
+    font-size: 20px;
+  }
+  .Tab {
+    font-size: 10px;
+  }
+  .popup-inner {
+    padding: 10px;
+  }
+}

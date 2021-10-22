@@ -16,7 +16,7 @@ function Marvel() {
   const mapping = API.map((data) => (
     <>
       {data.biography.publisher === "Marvel Comics" ? (
-        <button
+        <div
           id={data.id}
           onClick={() => {
             setButtonPopUp(true);
@@ -29,14 +29,23 @@ function Marvel() {
         >
           <img className="hero-img" src={data.images.sm} />
           {data.name}
-        </button>
+        </div>
       ) : null}
     </>
   ));
 
   return (
     <>
-      <div className="card-container">{mapping}</div>
+      <div
+        className="card-container"
+        style={{
+          backgroundImage: `url(${process.env.PUBLIC_URL + "/giphy.gif"})`,
+          // backgroundRepeat: "no-repeat",
+          // backgroundSize: "100%",
+        }}
+      >
+        {mapping}
+      </div>
       <Card trigger={buttonPopUp} setTrigger={setButtonPopUp}>
         {hero && <Chart ID={ID} hero={hero} />}
       </Card>

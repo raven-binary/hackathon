@@ -4,19 +4,21 @@ import DC from "./DC";
 import Marvel from "./Marvel";
 import All from "./All";
 import Search from "./Search";
+import "../App.css";
 
 const Tab = styled.button`
   font-family: "Teko", sans-serif;
   width: 100%;
   font-size: 30px;
-  padding: 10px 40px;
   cursor: pointer;
   opacity: 0.6;
   background: #f7ebe8;
   border-radius: 0.6rem;
-  margin: 10px;
   border: 0;
   outline: 0;
+  @media (max-width: 337px) {
+    font-size: 20px;
+  }
   ${({ active }) =>
     active &&
     `
@@ -25,7 +27,9 @@ const Tab = styled.button`
   `}
 `;
 const ButtonGroup = styled.div`
+  padding: 15px 10px 0 10px;
   display: flex;
+  gap: 4px;
 `;
 
 function TabGroup() {

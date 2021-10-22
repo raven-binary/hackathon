@@ -11,7 +11,7 @@ function Home() {
     <div>
       <nav>
         <div class="web_name">SuperHero Dex</div>
-        <div class="nav_logo">
+        <div class="nav_logo_container">
           <img
             class="nav_logo1"
             src={process.env.PUBLIC_URL + "/Marvelogo2.jpg"}
@@ -38,7 +38,16 @@ function Home() {
           >
             <h1>FIND YOUR INNER HERO</h1>
           </div>
-          <TabGroup />
+          <div
+            style={{
+              backgroundImage: `url(${process.env.PUBLIC_URL + "/giphy.gif"})`,
+              height: "100vh",
+              // backgroundRepeat: "no-repeat",
+              // backgroundSize: "100%",
+            }}
+          >
+            <TabGroup />
+          </div>
           {/* <ScrollButton /> */}
         </div>
       </div>
