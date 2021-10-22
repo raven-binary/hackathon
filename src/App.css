@@ -248,6 +248,7 @@ nav {
   padding-top: 20px;
   font-size: 18px;
   transition: ease all 0.5s;
+  text-align: start;
 }
 
 .popup-inner .close-btn {

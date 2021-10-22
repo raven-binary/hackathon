@@ -4,7 +4,12 @@ import React from "react";
 
 function Home() {
   return (
-    <div>
+    <div
+      style={{
+        backgroundImage: `url(${process.env.PUBLIC_URL + "/giphy.gif"})`,
+        height: "100%",
+      }}
+    >
       <nav>
         <div class="web_name">SuperHero Dex</div>
         <div class="nav_logo_container">
